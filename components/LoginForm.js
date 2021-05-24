@@ -34,21 +34,24 @@ const initialValues = {
 const onSubmit = async (values) => {
   // alert(JSON.stringify(values, null, 2));
 
-  const login = await fetch(`http://localhost:8080/authenticate`, {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(values),
-  });
+  // const login = await fetch(
+  //   `https://nextjs-material-dashboard-eight.vercel.app/authenticate`,
+  //   {
+  //     method: "POST",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(values),
+  //   }
+  // );
 
-  const loginResponse = await login.json();
+  // const loginResponse = await login.json();
 
-  setCookie(null, "jwt", loginResponse.jwt, {
-    maxAge: 30 * 24 * 60 * 60,
-    path: "/",
-  });
+  // setCookie(null, "jwt", loginResponse.jwt, {
+  //   maxAge: 30 * 24 * 60 * 60,
+  //   path: "/",
+  // });
 
   Router.push("/dashboard");
 };
