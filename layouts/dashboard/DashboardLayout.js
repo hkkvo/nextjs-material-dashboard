@@ -170,7 +170,6 @@ export default function DashboardLayout(props) {
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
 
-          {/* {React.cloneElement(props.children, { message: "toChildren" })} */}
           {props.children}
         </main>
       </TooltipContext.Provider>
