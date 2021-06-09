@@ -14,10 +14,12 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import { mainListItems } from "./sidebar/SidebarList";
 import TooltipContext from "../../context/dashboard/ToolTipContext";
 import UserSettingMenu from "./settingmenu/UserSettingMenu";
+import SortIcon from "@material-ui/icons/Sort";
 
 import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 
 const drawerWidth = 200;
+const minDrawerWidth = 20;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
   },
   appBar: {
-    zIndex: theme.zIndex.drawer + 1,
+    width: `calc(100% - 36px)`,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -49,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   menuButton: {
-    marginRight: 36,
+    marginRight: 24,
   },
   menuButtonHidden: {
     display: "none",
@@ -107,7 +109,7 @@ export default function DashboardLayout(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const handleDrawerOpen = () => {
-    setOpen(true);
+    setOpen(!open);
   };
   const handleDrawerClose = () => {
     setOpen(false);
@@ -123,18 +125,27 @@ export default function DashboardLayout(props) {
         className={clsx(classes.appBar, open && classes.appBarShift)}
       >
         <Toolbar className={classes.toolbar}>
-          <IconButton
-            edge='start'
-            color='inherit'
-            aria-label='open drawer'
-            onClick={handleDrawerOpen}
-            className={clsx(
-              classes.menuButton,
-              open && classes.menuButtonHidden
-            )}
-          >
-            <MenuIcon />
-          </IconButton>
+          {open ? (
+            <IconButton
+              edge='start'
+              color='inherit'
+              aria-label='open drawer'
+              onClick={handleDrawerOpen}
+              className={clsx(classes.menuButton)}
+            >
+              <MenuIcon />
+            </IconButton>
+          ) : (
+            <IconButton
+              edge='start'
+              color='inherit'
+              aria-label='open drawer'
+              onClick={handleDrawerOpen}
+              className={clsx(classes.menuButton)}
+            >
+              <SortIcon />
+            </IconButton>
+          )}
           <Typography
             component='h1'
             variant='h6'
@@ -159,9 +170,9 @@ export default function DashboardLayout(props) {
           open={open}
         >
           <div className={classes.toolbarIcon}>
-            <IconButton onClick={handleDrawerClose}>
+            {/* <IconButton onClick={handleDrawerClose}>
               <ChevronLeftIcon />
-            </IconButton>
+            </IconButton> */}
           </div>
           <Divider />
 

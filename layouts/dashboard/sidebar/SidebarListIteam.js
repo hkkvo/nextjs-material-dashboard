@@ -23,23 +23,23 @@ const useStyles = makeStyles((theme) => ({
       background: `rgba(57,57,251,.05)`,
       boxShadow: `-1px 1px 2px #b8b8b8,
       1px -1px 2px #ffffff`,
-      borderRight: "2px solid blue",
+      borderRight: `2px solid ${theme.palette.primary.main}`,
 
       "& $listIcon": {
-        color: "blue",
-        // boxShadow: `-1px 1px 2px #b8b8b8,1px -1px 2px #ffffff`,
+        color: theme.palette.primary.main,
+
         backgroundColor: `white`,
       },
       "& $listText": {
         fontWeight: `520`,
-        color: "blue",
+        color: theme.palette.primary.main,
       },
     },
   },
   listText: { fontSize: `14px` },
   listIcon: {
     fontSize: "16px",
-    color: `rgba(57,57,250,.8)`,
+    color: theme.palette.primary.main,
   },
   tooltip: {
     backgroundColor: theme.palette.common.white,
