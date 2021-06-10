@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import DashboardLayout from "../../layouts/dashboard/DashboardLayout";
 import { makeStyles, Paper } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   pageContainer: {
