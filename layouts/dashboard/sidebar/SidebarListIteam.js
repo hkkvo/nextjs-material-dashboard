@@ -43,11 +43,10 @@ const useStyles = makeStyles((theme) => ({
   },
   tooltip: {
     backgroundColor: theme.palette.common.white,
-    color: "rgba(0, 0, 0, 0.87)",
+    color: theme.palette.primary.main,
     boxShadow: theme.shadows[1],
     fontSize: 11,
     fontWeight: 600,
-    color: "blue",
   },
   arrow: {
     color: theme.palette.common.white,
