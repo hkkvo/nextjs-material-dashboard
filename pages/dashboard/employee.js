@@ -1,7 +1,5 @@
 import PropTypes from "prop-types";
 import DashboardLayout from "../../layouts/dashboard/DashboardLayout";
-import PageHeader from "../../components/PageHeader";
-import EmployeeForm from "../../components/Empolyee/EmployeeForm";
 import { makeStyles, Paper } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,10 +15,7 @@ const employee = (props) => {
 
   return (
     <div>
-      <Paper style={{ height: "20vh" }}></Paper>
-      <Paper className={classes.pageContainer} elevation={3}>
-        <EmployeeForm />
-      </Paper>
+      <Typography>Page From Employee</Typography>
     </div>
   );
 };
